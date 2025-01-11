@@ -1,15 +1,12 @@
-
+import {useContext} from "react";
+import {BookContext} from "../contexts/BookContext";
 
 export default function Navbar() {
-
+    const {books} = useContext(BookContext);
     return (
-        <nav>
-            <h1>Context app</h1>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
+        <nav className="navbar">
+            <h1>Ninja Reading List</h1>
+            <p>Currently you have {books.length} books to get through...</p>
         </nav>
     )
 }
